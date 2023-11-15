@@ -1,5 +1,89 @@
+/* #region RESET */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* #endregion */
+
+/* #region COMMON */
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* #endregion */
+
+/* #region BODY */
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* #endregion */
+
+/* #region HEADER */
+
+header {
+  justify-content: space-between;
+}
+
+header,
+.left-content {
+  display: flex;
+  align-items: center;
+}
+
+header #logo {
+  width: 3.75rem;
+  height: 3.75rem;
+}
+
+header .right-content button {
+  margin-right: 1.5625rem;
+  padding: 0 2.625rem;
+}
+
+/* #endregion */
+
+/* #region MAIN */
+
+main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #001533;
+}
+
+main .container {
+  width: 37.5rem;
+  height: 37.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+main .cell {
+  width: calc(100% / 10);
+  height: calc(100% / 10);
+  background-color: #01e165;
+  border: 1px solid #fff;
+  text-align: center;
+  line-height: 60px;
+}
+
+/* #endregion */
+
+/* #region FOOTER */
+
+footer {
+  padding: 1.25rem;
+}
+
+/* #endregion */
