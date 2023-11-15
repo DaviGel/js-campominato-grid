@@ -23,6 +23,12 @@ playButton.addEventListener('click', function () {
     container.append(element);
   }
   cells = document.querySelectorAll('.container .cell');
+  for (let i = 0; i < cells.length; i++) {
+    cells[i].addEventListener('click', function () {
+      cells[i].classList.add('active');
+      console.log(cells[i].innerHTML);
+    });
+  }
 });
 
 container.addEventListener('click', function () {});

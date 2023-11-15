@@ -78,6 +78,10 @@ main .cell {
   line-height: 60px;
 }
 
+main .active {
+  background-color: aquamarine;
+}
+
 /* #endregion */
 
 /* #region FOOTER */
