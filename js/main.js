@@ -10,11 +10,11 @@ function createCell(tag, classe, index) {
   return element;
 }
 
-// Aggungi alla cella la classe active
-function addActiveClass(element) {
+// Aggungi alla cella una classe scelta
+function addActiveClass(element, classe) {
   for (let i = 0; i < element.length; i++) {
     element[i].addEventListener('click', function () {
-      element[i].classList.add('active');
+      element[i].classList.add(classe);
       console.log(element[i].innerHTML);
     });
   }
@@ -34,5 +34,5 @@ playButton.addEventListener('click', function () {
     container.append(element);
   }
   cells = document.querySelectorAll('.container .cell');
-  addActiveClass(cells);
+  addActiveClass(cells, 'active');
 });
