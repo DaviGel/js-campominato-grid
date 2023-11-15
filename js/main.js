@@ -1,7 +1,8 @@
 'use strict';
 
-// Functions
+/* Functions */
 
+// Crea cella e inserisci il numero dentro
 function createCell(tag, classe, index) {
   const element = document.createElement(tag);
   element.classList.add(classe);
@@ -9,7 +10,17 @@ function createCell(tag, classe, index) {
   return element;
 }
 
-// Program
+// Aggungi alla cella la classe active
+function addActiveClass(element) {
+  for (let i = 0; i < element.length; i++) {
+    element[i].addEventListener('click', function () {
+      element[i].classList.add('active');
+      console.log(element[i].innerHTML);
+    });
+  }
+}
+
+/* Program */
 
 const container = document.querySelector('main .container');
 const playButton = document.querySelector('header button');
@@ -23,12 +34,5 @@ playButton.addEventListener('click', function () {
     container.append(element);
   }
   cells = document.querySelectorAll('.container .cell');
-  for (let i = 0; i < cells.length; i++) {
-    cells[i].addEventListener('click', function () {
-      cells[i].classList.add('active');
-      console.log(cells[i].innerHTML);
-    });
-  }
+  addActiveClass(cells);
 });
-
-container.addEventListener('click', function () {});
