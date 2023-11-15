@@ -82,6 +82,16 @@ main .active {
   background-color: aquamarine;
 }
 
+main .cell.medium {
+  width: calc(100% / 9);
+  height: calc(100% / 9);
+}
+
+main .cell.hard {
+  width: calc(100% / 7);
+  height: calc(100% / 7);
+}
+
 /* #endregion */
 
 /* #region FOOTER */

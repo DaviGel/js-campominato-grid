@@ -10,8 +10,8 @@ function createCell(tag, classe, index) {
   return element;
 }
 
-// Aggungi alla cella una classe scelta
-function addActiveClass(element, classe) {
+// Al click aggungi all'elemento una classe scelta e stampane il contenuto in console
+function addClassOnClick(element, classe) {
   for (let i = 0; i < element.length; i++) {
     element[i].addEventListener('click', function () {
       element[i].classList.add(classe);
@@ -24,15 +24,35 @@ function addActiveClass(element, classe) {
 
 const container = document.querySelector('main .container');
 const playButton = document.querySelector('header button');
+const difficulty = document.getElementById('chosen').value;
+
 let element = '';
 let cells = '';
 
 playButton.addEventListener('click', function () {
-  container.innerHTML = '';
-  for (let i = 1; i <= 100; i++) {
-    element = createCell('div', 'cell', i);
-    container.append(element);
+  console.log(difficulty);
+  if (difficulty === 'Easy') {
+    for (let i = 1; i <= 100; i++) {
+      element = createCell('div', 'cell', i);
+      container.append(element);
+    }
+    cells = document.querySelectorAll('.container .cell');
+    addClassOnClick(cells, 'active');
+  } else if (difficulty === 'Medium') {
+    for (let i = 1; i <= 81; i++) {
+      element = createCell('div', 'cell', i);
+      container.append(element);
+      element.classList.add('medium');
+    }
+    cells = document.querySelectorAll('.container .cell');
+    addClassOnClick(cells, 'active');
+  } else {
+    for (let i = 1; i <= 49; i++) {
+      element = createCell('div', 'cell', i);
+      container.append(element);
+      element.classList.add('hard');
+    }
+    cells = document.querySelectorAll('.container .cell');
+    addClassOnClick(cells, 'active');
   }
-  cells = document.querySelectorAll('.container .cell');
-  addActiveClass(cells, 'active');
 });
