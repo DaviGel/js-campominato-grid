@@ -24,21 +24,21 @@ function addClassOnClick(element, classe) {
 
 const container = document.querySelector('main .container');
 const playButton = document.querySelector('header button');
-const difficulty = document.getElementById('chosen').value;
+const difficulty = document.getElementById('chosen');
 
 let element = '';
 let cells = '';
 
 playButton.addEventListener('click', function () {
-  console.log(difficulty);
-  if (difficulty === 'Easy') {
+  container.innerHTML = '';
+  if (difficulty.value === 'easy') {
     for (let i = 1; i <= 100; i++) {
       element = createCell('div', 'cell', i);
       container.append(element);
     }
     cells = document.querySelectorAll('.container .cell');
     addClassOnClick(cells, 'active');
-  } else if (difficulty === 'Medium') {
+  } else if (difficulty.value === 'medium') {
     for (let i = 1; i <= 81; i++) {
       element = createCell('div', 'cell', i);
       container.append(element);
