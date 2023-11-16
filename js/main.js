@@ -10,7 +10,7 @@ function createCell(tag, classe, index) {
   return element;
 }
 
-// Al click aggungi all'elemento una classe scelta e stampane il contenuto in console
+// Al click aggungi a tutti gli elementi passati tramite l'argomento element una classe scelta e stampane il contenuto in console
 function addClassOnClick(element, classe) {
   for (let i = 0; i < element.length; i++) {
     element[i].addEventListener('click', function () {
