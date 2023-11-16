@@ -29,7 +29,6 @@ const title = document.querySelector('main .container h2');
 const easy = 100;
 const medium = 81;
 const hard = 49;
-
 let element = '';
 let cells = '';
 
