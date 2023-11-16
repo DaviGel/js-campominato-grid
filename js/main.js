@@ -25,34 +25,40 @@ function addClassOnClick(element, classe) {
 const container = document.querySelector('main .container');
 const playButton = document.querySelector('header button');
 const difficulty = document.getElementById('chosen');
+const title = document.querySelector('main .container h2');
+const easy = 100;
+const medium = 81;
+const hard = 49;
 
 let element = '';
 let cells = '';
 
+window.addEventListener('load', function () {
+  title.classList.add('visible');
+});
+
 playButton.addEventListener('click', function () {
   container.innerHTML = '';
+  title.classList.add('d-none');
   if (difficulty.value === 'easy') {
-    for (let i = 1; i <= 100; i++) {
+    for (let i = 1; i <= easy; i++) {
       element = createCell('div', 'cell', i);
       container.append(element);
     }
-    cells = document.querySelectorAll('.container .cell');
-    addClassOnClick(cells, 'active');
   } else if (difficulty.value === 'medium') {
-    for (let i = 1; i <= 81; i++) {
+    for (let i = 1; i <= medium; i++) {
       element = createCell('div', 'cell', i);
       container.append(element);
       element.classList.add('medium');
     }
-    cells = document.querySelectorAll('.container .cell');
-    addClassOnClick(cells, 'active');
   } else {
-    for (let i = 1; i <= 49; i++) {
+    for (let i = 1; i <= hard; i++) {
       element = createCell('div', 'cell', i);
       container.append(element);
       element.classList.add('hard');
     }
-    cells = document.querySelectorAll('.container .cell');
-    addClassOnClick(cells, 'active');
   }
+
+  cells = document.querySelectorAll('.container .cell');
+  addClassOnClick(cells, 'active');
 });

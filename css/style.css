@@ -15,6 +15,10 @@ img {
   max-width: 100%;
 }
 
+.d-none {
+  display: none;
+}
+
 /* #endregion */
 
 /* #region BODY */
@@ -66,7 +70,21 @@ main .container {
   height: 37.5rem;
   display: flex;
   flex-wrap: wrap;
-  align-content: flex-start;
+  align-items: center;
+  justify-content: center;
+}
+
+main .container h2 {
+  color: #01e165;
+  font-family: Arial, Helvetica, sans-serif;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+main .container h2.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 main .cell {
