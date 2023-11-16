@@ -39,7 +39,6 @@ window.addEventListener('load', function () {
 
 playButton.addEventListener('click', function () {
   container.innerHTML = '';
-  title.classList.add('d-none');
   if (difficulty.value === 'easy') {
     for (let i = 1; i <= easy; i++) {
       element = createCell('div', 'cell', i);
