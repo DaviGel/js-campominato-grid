@@ -26,9 +26,8 @@ const container = document.querySelector('main .container');
 const playButton = document.querySelector('header button');
 const difficulty = document.getElementById('chosen');
 const title = document.querySelector('main .container h2');
-const easy = 100;
-const medium = 81;
-const hard = 49;
+let difficultyLevel = 0;
+let difficultyName = '';
 let element = '';
 let cells = '';
 
@@ -38,23 +37,21 @@ window.addEventListener('load', function () {
 
 playButton.addEventListener('click', function () {
   container.innerHTML = '';
+
   if (difficulty.value === 'easy') {
-    for (let i = 1; i <= easy; i++) {
-      element = createCell('div', 'cell', i);
-      container.append(element);
-    }
+    difficultyLevel = 100;
+    difficultyName = 'easy';
   } else if (difficulty.value === 'medium') {
-    for (let i = 1; i <= medium; i++) {
-      element = createCell('div', 'cell', i);
-      container.append(element);
-      element.classList.add('medium');
-    }
+    difficultyLevel = 81;
+    difficultyName = 'medium';
   } else {
-    for (let i = 1; i <= hard; i++) {
-      element = createCell('div', 'cell', i);
-      container.append(element);
-      element.classList.add('hard');
-    }
+    difficultyLevel = 49;
+    difficultyName = 'hard';
+  }
+  for (let i = 1; i <= difficultyLevel; i++) {
+    element = createCell('div', 'cell', i);
+    container.append(element);
+    element.classList.add(difficultyName);
   }
 
   cells = document.querySelectorAll('.container .cell');
